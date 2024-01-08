@@ -1,9 +1,12 @@
 import React from 'react'
+import Message from '../components/Message'
+import Header from '@/components/Header'
 
 const orders = () => {
   return (
     <div>
-      Orders
+      <Header page='Orders'/>
+      <Message />
     </div>
   )
 }
