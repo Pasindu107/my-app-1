@@ -18,7 +18,7 @@ function MessageBoard() {
 
   return (
     <div>
-        <div className='grid lg:grid-cols-5 gap-4 p-4'>
+        <div className='grid gap-4 p-4'>
             <h2>Message Board</h2>
 
             <form onSubmit={handleSubmit}>
@@ -38,8 +38,13 @@ function MessageBoard() {
       
       <div className="messages-container">
         {messages.map((message, index) => (
-          <div className="message-card" key={index}>
-            <p>{message}</p>
+          <div className='px-4 pb-2'>
+            <div className="break-words bg-gray-200 flex justify-center items-center p-4 rounded-lg" key={index}>
+              <p className='bg-green-200 flex justify-center items-center p-2 rounded-lg'>
+                  <span className='text-green-700 tetx-lg'>18%</span>
+              </p>
+              <p className='px-4'>{message}</p>
+            </div>
           </div>
         ))}
       </div>
