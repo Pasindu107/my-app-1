@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DateBox from './DateBox';
 
 function MessageBoard() {
   const [messages, setMessages] = useState([]);
@@ -6,6 +7,8 @@ function MessageBoard() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    
 
     // Prevent empty messages
     if (!newMessage.trim()) {
@@ -40,8 +43,8 @@ function MessageBoard() {
         {messages.map((message, index) => (
           <div className='px-4 pb-2'>
             <div className="break-words bg-gray-200 flex justify-center items-center p-4 rounded-lg" key={index}>
-              <p className='bg-green-200 flex justify-center items-center p-2 rounded-lg'>
-                  <span className='text-green-700 tetx-lg'>18%</span>
+              <p className='bg-white flex justify-center items-center p-2 rounded-lg'>
+                  <span><DateBox /></span>
               </p>
               <p className='px-4'>{message}</p>
             </div>
