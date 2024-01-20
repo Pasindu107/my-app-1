@@ -8,7 +8,7 @@ const DateBox = ({ content }) => {
       <div className="">
         <div>
           <p className="text-xl font-semibold">{content}</p>
-          <p className="text-gray-500">{currentDate}</p>
+          <p className="text-gray-500 ">{currentDate}</p>
         </div>
       </div>
     );

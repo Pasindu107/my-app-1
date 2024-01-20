@@ -42,9 +42,9 @@ function MessageBoard() {
       <div className="messages-container">
         {messages.map((message, index) => (
           <div className='px-4 pb-2'>
-            <div className="break-words bg-gray-200 flex justify-center items-center p-4 rounded-lg" key={index}>
+            <div className="relative break-words bg-white border flex justify-center items-center p-4 rounded-lg" key={index}>
               <p className='bg-white flex justify-center items-center p-2 rounded-lg'>
-                  <span><DateBox /></span>
+                  <span className=''><DateBox /></span>
               </p>
               <p className='px-4'>{message}</p>
             </div>
