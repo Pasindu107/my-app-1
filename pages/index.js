@@ -2,8 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 import Header from '../components/Header'
-// import TopCards from '../components/TopCards'
-import Projects from '@/components/Projects'
+import TopCards from '../components/TopCards'
+// import Projects from '@/components/Projects'
 
 
 export default function Home() {
@@ -17,8 +17,8 @@ export default function Home() {
       </Head>
       <main className='bg-gray-100 min-h-screen'>
       <Header page='Dashboard'/>
-      {/* <TopCards /> */}
-      <Projects />
+      <TopCards />
+      {/* <Projects /> */}
       </main>
     </>
   )

@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
-import DateBox from './DateBox';
+import DaleteBtn from './DeleteBtn';
+
 
 function MessageBoard() {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-
-    
-
-    // Prevent empty messages
+    event.preventDefault();  // Prevent empty messages
     if (!newMessage.trim()) {
       return;
     }
 
     setMessages([...messages, newMessage]);
     setNewMessage(''); // Clear the input field
+  };
+
+  //delete
+  const handleDelete = (index) => {
+    const updatedMessages = [...messages];
+    updatedMessages.splice(index, 1);
+    setMessages(updatedMessages);
   };
 
   return (
@@ -26,6 +30,7 @@ function MessageBoard() {
 
             <form onSubmit={handleSubmit}>
             <input
+                
                 type="text"
                 value={newMessage}
                 onChange={(event) => setNewMessage(event.target.value)}
@@ -41,12 +46,13 @@ function MessageBoard() {
       
       <div className="messages-container">
         {messages.map((message, index) => (
-          <div className='px-4 pb-2'>
-            <div className="relative break-words bg-white border flex justify-center items-center p-4 rounded-lg" key={index}>
-              <p className='bg-white flex justify-center items-center p-2 rounded-lg'>
-                  <span className=''><DateBox /></span>
-              </p>
-              <p className='px-4'>{message}</p>
+          <div className='px-4 pb-2' key={message.id || index}>
+            <div className="relative break-words bg-white border flex justify-between items-center p-4 rounded-lg">
+             <p className='px-4'>{message}</p>
+             <div className='p-2 order-last'>
+              <DaleteBtn onDelete={() => handleDelete(index)} />
+             </div>
+             
             </div>
           </div>
         ))}
