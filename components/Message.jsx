@@ -26,7 +26,7 @@ function MessageBoard() {
   return (
     <div>
         <div className='grid gap-4 p-4'>
-            <h2>Message Board</h2>
+            
 
             <form onSubmit={handleSubmit}>
             <input

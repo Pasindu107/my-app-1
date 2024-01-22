@@ -5,7 +5,7 @@ import Header from '@/components/Header'
 const orders = () => {
   return (
     <div className='bg-gray-100 min-h-screen'>
-      <Header page='Orders'/>
+      <Header page='Massage Board'/>
       <Message />
     </div>
   )
